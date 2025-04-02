@@ -12,7 +12,6 @@ public class UserRepository implements EntityRepository<User> {
 
     private Connection connection;
 
-    // Construtor que recebe a conexão
     public UserRepository(Connection connection) {
         this.connection = connection;
     }
