@@ -7,14 +7,12 @@ public class Product {
     private String name;
     private double price;
 
-    // Construtor
     public Product(UUID uuid, String name, double price) {
         this.uuid = uuid;
         this.name = name;
         this.price = price;
     }
 
-    // Getters e Setters
     public UUID getUuid() {
         return uuid;
     }
