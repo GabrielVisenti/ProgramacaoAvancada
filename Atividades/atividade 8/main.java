@@ -14,13 +14,10 @@ public class Main {
     public static void main(String[] args) {
         String url = "jdbc:sqlite:database.db"; // URL do banco de dados SQLite
         try {
-            // Registrar o driver do SQLite manualmente
             Class.forName("org.sqlite.JDBC");
 
-            // Abrir conexão com o banco de dados
             Connection connection = DriverManager.getConnection(url);
 
-            // Criar tabelas caso não existam
             try (Statement stmt = connection.createStatement()) {
                 String createUsersTable = "CREATE TABLE IF NOT EXISTS users (" +
                         "uuid TEXT PRIMARY KEY," +
@@ -38,7 +35,6 @@ public class Main {
                 stmt.executeUpdate(createProductsTable);
             }
 
-            // Criar repositórios
             UserRepository userRepository = new UserRepository(connection);
             ProductRepository productRepository = new ProductRepository(connection);
             Scanner scanner = new Scanner(System.in);
@@ -86,7 +82,6 @@ public class Main {
                     System.out.println("Produto cadastrado com sucesso!");
 
                 } else if (option == 4) {
-                    // Listagem de produtos
                     List<Product> products = productRepository.findAll();
                     for (Product p : products) {
                         System.out.println("ID: " + p.getUuid() + " | Nome: " + p.getName() + " | Preço: " + p.getPrice());
