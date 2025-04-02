@@ -6,11 +6,11 @@ import java.util.UUID;
 
 public interface EntityRepository<T> {
 
-    void save(T entity); // Salva a entidade no banco de dados
+    void save(T entity); 
 
-    Optional<T> findById(UUID uuid); // Encontra uma entidade pelo UUID
+    Optional<T> findById(UUID uuid); 
 
-    List<T> findAll(); // Lista todas as entidades
+    List<T> findAll(); 
 
-    void deleteById(UUID uuid); // Deleta uma entidade pelo UUID
+    void deleteById(UUID uuid); 
 }
