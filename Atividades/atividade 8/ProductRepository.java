@@ -12,7 +12,6 @@ public class ProductRepository implements EntityRepository<Product> {
 
     private Connection connection;
 
-    // Construtor que recebe a conexão
     public ProductRepository(Connection connection) {
         this.connection = connection;
     }
