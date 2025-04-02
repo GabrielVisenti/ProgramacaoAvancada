@@ -8,7 +8,6 @@ public class User {
     private String email;
     private String password;
 
-    // Construtor
     public User(UUID uuid, String name, String email, String password) {
         this.uuid = uuid;
         this.name = name;
@@ -16,7 +15,6 @@ public class User {
         this.password = password;
     }
 
-    // Getters e Setters
     public UUID getUuid() {
         return uuid;
     }
